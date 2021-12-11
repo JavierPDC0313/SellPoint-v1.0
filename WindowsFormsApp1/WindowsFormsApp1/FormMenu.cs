@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
         {
             FormLogin salir = new FormLogin();
             salir.Show();
-            this.Close();
+         //   this.Close();
 
         }
 

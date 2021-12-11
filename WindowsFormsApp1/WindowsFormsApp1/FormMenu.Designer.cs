@@ -41,11 +41,9 @@ namespace WindowsFormsApp1
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,19 +71,19 @@ namespace WindowsFormsApp1
             // grupoEntidadesToolStripMenuItem
             // 
             this.grupoEntidadesToolStripMenuItem.Name = "grupoEntidadesToolStripMenuItem";
-            this.grupoEntidadesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.grupoEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grupoEntidadesToolStripMenuItem.Text = "Grupo entidades";
             // 
             // tiposEntidadesToolStripMenuItem
             // 
             this.tiposEntidadesToolStripMenuItem.Name = "tiposEntidadesToolStripMenuItem";
-            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tiposEntidadesToolStripMenuItem.Text = "Tipos entidades";
             // 
             // entidadesToolStripMenuItem
             // 
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             // 
             // sistemaToolStripMenuItem
@@ -132,15 +130,6 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(793, 593);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -167,7 +156,6 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(817, 752);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.IsMdiContainer = true;
@@ -178,7 +166,6 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +183,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
     }

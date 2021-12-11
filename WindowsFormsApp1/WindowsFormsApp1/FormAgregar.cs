@@ -31,5 +31,17 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Se a agregado correctamente");
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FormMenu menu = new FormMenu();
+            menu.Show();
+        }
     }
 }
