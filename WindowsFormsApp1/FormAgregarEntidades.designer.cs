@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbEntidad = new System.Windows.Forms.ComboBox();
+            this.CmbEntidad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
             this.CmbStatus = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.TxtLocalidad = new System.Windows.Forms.TextBox();
@@ -115,16 +115,16 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(536, 103);
             this.panel1.TabIndex = 6;
             // 
-            // cbEntidad
+            // CmbEntidad
             // 
-            this.cbEntidad.FormattingEnabled = true;
-            this.cbEntidad.Items.AddRange(new object[] {
+            this.CmbEntidad.FormattingEnabled = true;
+            this.CmbEntidad.Items.AddRange(new object[] {
             "Física",
             "Jurídica"});
-            this.cbEntidad.Location = new System.Drawing.Point(92, 230);
-            this.cbEntidad.Name = "cbEntidad";
-            this.cbEntidad.Size = new System.Drawing.Size(100, 21);
-            this.cbEntidad.TabIndex = 7;
+            this.CmbEntidad.Location = new System.Drawing.Point(92, 230);
+            this.CmbEntidad.Name = "CmbEntidad";
+            this.CmbEntidad.Size = new System.Drawing.Size(100, 21);
+            this.CmbEntidad.TabIndex = 7;
             // 
             // label2
             // 
@@ -287,12 +287,12 @@ namespace WindowsFormsApp1
             this.label11.TabIndex = 28;
             this.label11.Text = "Fecha: ";
             // 
-            // dateTimePicker1
+            // DtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(273, 142);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 29;
+            this.DtpFecha.Location = new System.Drawing.Point(273, 142);
+            this.DtpFecha.Name = "DtpFecha";
+            this.DtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.DtpFecha.TabIndex = 29;
             // 
             // TxtDescripcion
             // 
@@ -362,6 +362,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 38;
             this.button2.Text = "Volver";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label12
             // 
@@ -421,7 +422,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.TxtLocalidad);
             this.Controls.Add(this.TxtDireccion);
             this.Controls.Add(this.TxtDescripcion);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DtpFecha);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.CmbStatus);
@@ -438,7 +439,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbEntidad);
+            this.Controls.Add(this.CmbEntidad);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -458,7 +459,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbEntidad;
+        private System.Windows.Forms.ComboBox CmbEntidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
@@ -475,7 +476,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox CmbStatus;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtpFecha;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.TextBox TxtLocalidad;
