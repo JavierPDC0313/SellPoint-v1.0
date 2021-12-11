@@ -10,13 +10,26 @@ using System.Data;
 
 namespace Capa_Negocios
 {
-    class MantenimientoTiposEntidades
+    public class MantenimientoTiposEntidades
     {
         private RepositorioTiposEntidades repo;
 
         public MantenimientoTiposEntidades(SqlConnection conexion)
         {
             repo = new RepositorioTiposEntidades(conexion);
+        }
+        public Entidades CrearObjeto(string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
+        {
+            Entidades entidad = new Entidades
+            {
+                Descripcion = descripcion,
+                Comentario = "no comentarios",
+                Status = Status,
+                NoEliminable = eliminable,
+                FechaRegistro = fecha
+            };
+
+            return entidad;
         }
 
         public bool Agregar(TiposEntidades item)

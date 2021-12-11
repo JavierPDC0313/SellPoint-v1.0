@@ -19,7 +19,7 @@ namespace Capa_Datos.Modelos
 
         public string Status { get; set; }
 
-        public string NoEliminable { get; set; }
+        public int NoEliminable { get; set; }
 
         public DateTime FechaRegistro { get; set; }
 

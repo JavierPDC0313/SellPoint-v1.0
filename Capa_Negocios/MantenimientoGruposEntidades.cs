@@ -19,6 +19,8 @@ namespace Capa_Negocios
             repo = new RepositorioGruposEntidades(conexion);
         }
 
+
+
         public bool Agregar(GruposEntidades item)
         {
             return repo.Agregar(item);
