@@ -38,6 +38,16 @@ namespace Capa_Negocios
         {
             return repo.Listar();
         }
+
+        public Entidades EnlistarPorId(int id)
+        {
+            return repo.EnlistarPorId(id);
+        }
+
+        public bool UsuarioExiste(string userName)
+        {
+            return repo.UsuarioExiste(userName);
+        }
     
     }
 }

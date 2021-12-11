@@ -44,6 +44,7 @@
     <Compile Include="MantenimentoEntidades.cs" />
     <Compile Include="MantenimientoGruposEntidades.cs" />
     <Compile Include="MantenimientoTiposEntidades.cs" />
+    <Compile Include="Presentacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

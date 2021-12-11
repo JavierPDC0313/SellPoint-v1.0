@@ -100,6 +100,101 @@ namespace Capa_Datos
             return ObtenerDatos(lista);
         }
 
+        public bool UsuarioExiste(string userName)
+        {
+            try
+            {
+                int Existe = 0;
+
+                _conexion.Open();
+
+                SqlCommand command = new SqlCommand("select count(UserNameEntidad) from Entidades where UserNameEntidad = @nombreUsuario", _conexion);
+
+                command.Parameters.AddWithValue("@nombreUsuario", userName);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Existe = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                }
+
+                reader.Close();
+                reader.Dispose();
+
+                _conexion.Close();
+
+                if (Existe >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                _conexion.Close();
+
+                return false;
+            }
+        }
+
+        public Entidades EnlistarPorId(int id)
+        {
+            try
+            {
+                _conexion.Open();
+
+                Entidades entidad = new Entidades();
+
+                SqlCommand sqlCommand = new SqlCommand("select * from Entidades where IdEntidad = @id", _conexion);
+
+                sqlCommand.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    entidad.IdEntidad = dataReader.IsDBNull(0) ? 0 : dataReader.GetInt32(0);
+                    entidad.Descripcion = dataReader.IsDBNull(1) ? "NULL" : dataReader.GetString(1);
+                    entidad.Direccion = dataReader.IsDBNull(2) ? "NULL" : dataReader.GetString(2);
+                    entidad.Localidad = dataReader.IsDBNull(3) ? "NULL" : dataReader.GetString(3);
+                    entidad.TipoEntidad = dataReader.IsDBNull(4) ? "NULL" : dataReader.GetString(4);
+                    entidad.TipoDocumento = dataReader.IsDBNull(5) ? "NULL" : dataReader.GetString(5);
+                    entidad.NumeroDocumento = dataReader.IsDBNull(6) ? "NULL" : dataReader.GetString(6);
+                    entidad.Teléfonos = dataReader.IsDBNull(7) ? "NULL" : dataReader.GetString(7);
+                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);
+                    entidad.URLFacebook = dataReader.IsDBNull(9) ? "NULL" : dataReader.GetString(9);
+                    entidad.URLInstagram = dataReader.IsDBNull(10) ? "NULL" : dataReader.GetString(10);
+                    entidad.URLTwitter = dataReader.IsDBNull(11) ? "NULL" : dataReader.GetString(11);
+                    entidad.URLTikTok = dataReader.IsDBNull(12) ? "NULL" : dataReader.GetString(12);
+                    entidad.IdGrupoEntidad = dataReader.IsDBNull(13) ? 0 : dataReader.GetInt32(13);
+                    entidad.IdTipoEntidad = dataReader.IsDBNull(14) ? 0 : dataReader.GetInt32(14);
+                    entidad.LimiteCredito = dataReader.IsDBNull(15) ? 0 : dataReader.GetInt32(15);
+                    entidad.UserNameEntidad = dataReader.IsDBNull(16) ? "NULL" : dataReader.GetString(16);
+                    entidad.PasswordEntidad = dataReader.IsDBNull(17) ? "NULL" : dataReader.GetString(17);
+                    entidad.RolUserEntidad = dataReader.IsDBNull(18) ? "NULL" : dataReader.GetString(18);
+                    entidad.Comentario = dataReader.IsDBNull(19) ? "NULL" : dataReader.GetString(19);
+                    entidad.Status = dataReader.IsDBNull(20) ? "NULL" : dataReader.GetString(20);
+                    entidad.NoEliminable = dataReader.IsDBNull(21) ? 0 : dataReader.GetInt32(21);
+                    entidad.FechaRegistro = dataReader.IsDBNull(22) ? DateTime.Now : dataReader.GetDateTime(22);
+                }
+
+                dataReader.Close();
+                dataReader.Dispose();
+
+                _conexion.Close();
+
+                return entidad;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
         private bool EjecutarConsulta(SqlCommand command)
         {
             try

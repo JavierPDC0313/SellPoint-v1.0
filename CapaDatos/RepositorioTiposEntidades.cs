@@ -14,7 +14,8 @@ namespace Capa_Datos
 
         private SqlConnection _conexion;
 
-        public Tipos(SqlConnection conexion)
+        public 
+            RepositorioTiposEntidades(SqlConnection conexion)
         {
             _conexion = conexion;
         }
