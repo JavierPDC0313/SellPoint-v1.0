@@ -32,15 +32,15 @@ namespace WindowsFormsApp1
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedText == "RNC")
+            if (CmbTipoDoc.SelectedText == "RNC")
             {
                 TxtNumDocumento.Mask = "000-00000-0";
             }
-            else if (comboBox1.SelectedText == "Cedula")
+            else if (CmbTipoDoc.SelectedText == "Cedula")
             {
                 TxtNumDocumento.Mask = "000-0000000-0";
             }
-            else if (comboBox1.SelectedText == "Pasaporte")
+            else if (CmbTipoDoc.SelectedText == "Pasaporte")
             {
                 TxtNumDocumento.Mask = "ZAB000000";
             }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         {
             if (Validations() == false)
             {
-                if (_mantenimiento.Agregar(_mantenimiento.CrearObjeto(TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, TxtNumDocumento.Text, TxtTelefono.Text, 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtContraseña.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
+                if (_mantenimiento.Agregar(_mantenimiento.CrearObjeto(TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, CmbTipoDoc.Text, TxtNumDocumento.Text, TxtTelefono.Text, 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtContraseña.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
                 {
                     MessageBox.Show("Se ha agregado con éxito","notificacion");
                 }
@@ -118,6 +118,11 @@ namespace WindowsFormsApp1
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAgregarEntidades_Load(object sender, EventArgs e)
         {
 
         }

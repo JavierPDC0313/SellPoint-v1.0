@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.CmbEntidad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -136,20 +136,20 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 8;
             this.label2.Text = "Entidad:";
             // 
-            // comboBox1
+            // CmbTipoDoc
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CmbTipoDoc.FormattingEnabled = true;
+            this.CmbTipoDoc.Items.AddRange(new object[] {
             "RNC",
             "Cedula",
             "Pasaporte"});
-            this.comboBox1.Location = new System.Drawing.Point(112, 255);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(62, 21);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.DropDownClosed += new System.EventHandler(this.comboBox1_DropDownClosed);
+            this.CmbTipoDoc.Location = new System.Drawing.Point(112, 255);
+            this.CmbTipoDoc.Name = "CmbTipoDoc";
+            this.CmbTipoDoc.Size = new System.Drawing.Size(62, 21);
+            this.CmbTipoDoc.TabIndex = 13;
+            this.CmbTipoDoc.DropDownClosed += new System.EventHandler(this.comboBox1_DropDownClosed);
             // 
             // linkLabel1
             // 
@@ -444,7 +444,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CmbTipoDoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CmbEntidad);
             this.Controls.Add(this.panel1);
@@ -454,6 +454,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.lbDescripcion);
             this.Name = "FormAgregarEntidades";
             this.Text = "FormAgregar";
+            this.Load += new System.EventHandler(this.FormAgregarEntidades_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,7 +469,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox CmbEntidad;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbTipoDoc;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;

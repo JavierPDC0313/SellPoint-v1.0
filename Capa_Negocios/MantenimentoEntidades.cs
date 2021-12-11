@@ -73,6 +73,10 @@ namespace Capa_Negocios
         {
             return repo.UsuarioExiste(userName);
         }
-    
+
+        public Entidades EnlistarPorUser(string userName)
+        {
+            return repo.EnlistarPorUser(userName);
+        }
     }
 }

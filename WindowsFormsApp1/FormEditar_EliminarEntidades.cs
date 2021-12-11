@@ -92,8 +92,7 @@ namespace WindowsFormsApp1
         {
             if (id >= 0)
             {
-                DialogResult dialogo = new DialogResult();
-                dialogo = MessageBox.Show("Estas seguro de que deseas borrar?", "Advertencia", MessageBoxButtons.YesNo);
+                DialogResult dialogo = MessageBox.Show("Estas seguro de que deseas borrar?", "Advertencia", MessageBoxButtons.YesNo);
                 
                 if (dialogo == DialogResult.Yes)
                 {
