@@ -244,6 +244,10 @@ namespace WindowsFormsApp1
             // CmbRol
             // 
             this.CmbRol.FormattingEnabled = true;
+            this.CmbRol.Items.AddRange(new object[] {
+            "Admin",
+            "Supervisor",
+            "User"});
             this.CmbRol.Location = new System.Drawing.Point(92, 423);
             this.CmbRol.Name = "CmbRol";
             this.CmbRol.Size = new System.Drawing.Size(100, 21);
@@ -262,6 +266,9 @@ namespace WindowsFormsApp1
             // CmbStatus
             // 
             this.CmbStatus.FormattingEnabled = true;
+            this.CmbStatus.Items.AddRange(new object[] {
+            "Activa",
+            "Inactiva"});
             this.CmbStatus.Location = new System.Drawing.Point(92, 454);
             this.CmbStatus.Name = "CmbStatus";
             this.CmbStatus.Size = new System.Drawing.Size(100, 21);
