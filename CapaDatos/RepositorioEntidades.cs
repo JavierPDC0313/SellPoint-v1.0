@@ -203,7 +203,7 @@ namespace Capa_Datos
 
                 Entidades entidad = new Entidades();
 
-                SqlCommand sqlCommand = new SqlCommand("select * from Entidades where UserNameEntidad = @userName", _conexion);
+                SqlCommand sqlCommand = new SqlCommand("select IdEntidad, UserNameEntidad, PassworEntidad from Entidades where UserNameEntidad = @userName", _conexion);
 
                 sqlCommand.Parameters.AddWithValue("@userName", userName);
 
@@ -212,28 +212,8 @@ namespace Capa_Datos
                 while (dataReader.Read())
                 {
                     entidad.IdEntidad = dataReader.IsDBNull(0) ? 0 : dataReader.GetInt32(0);
-                    entidad.Descripcion = dataReader.IsDBNull(1) ? "NULL" : dataReader.GetString(1);
-                    entidad.Direccion = dataReader.IsDBNull(2) ? "NULL" : dataReader.GetString(2);
-                    entidad.Localidad = dataReader.IsDBNull(3) ? "NULL" : dataReader.GetString(3);
-                    entidad.TipoEntidad = dataReader.IsDBNull(4) ? "NULL" : dataReader.GetString(4);
-                    entidad.TipoDocumento = dataReader.IsDBNull(5) ? "NULL" : dataReader.GetString(5);
-                    entidad.NumeroDocumento = dataReader.IsDBNull(6) ? "NULL" : dataReader.GetString(6);
-                    entidad.Teléfonos = dataReader.IsDBNull(7) ? "NULL" : dataReader.GetString(7);
-                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8); entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);
-                    entidad.URLFacebook = dataReader.IsDBNull(9) ? "NULL" : dataReader.GetString(9);
-                    entidad.URLInstagram = dataReader.IsDBNull(10) ? "NULL" : dataReader.GetString(10);
-                    entidad.URLTwitter = dataReader.IsDBNull(11) ? "NULL" : dataReader.GetString(11);
-                    entidad.URLTikTok = dataReader.IsDBNull(12) ? "NULL" : dataReader.GetString(12);
-                    entidad.IdGrupoEntidad = dataReader.IsDBNull(13) ? 0 : dataReader.GetInt32(13);
-                    entidad.IdTipoEntidad = dataReader.IsDBNull(14) ? 0 : dataReader.GetInt32(14);
-                    entidad.LimiteCredito = dataReader.IsDBNull(15) ? 0 : dataReader.GetInt32(15);
-                    entidad.UserNameEntidad = dataReader.IsDBNull(16) ? "NULL" : dataReader.GetString(16);
-                    entidad.PasswordEntidad = dataReader.IsDBNull(17) ? "NULL" : dataReader.GetString(17);
-                    entidad.RolUserEntidad = dataReader.IsDBNull(18) ? "NULL" : dataReader.GetString(18);
-                    entidad.Comentario = dataReader.IsDBNull(19) ? "NULL" : dataReader.GetString(19);
-                    entidad.Status = dataReader.IsDBNull(20) ? "NULL" : dataReader.GetString(20);
-                    entidad.NoEliminable = dataReader.IsDBNull(21) ? 0 : dataReader.GetInt32(21);
-                    entidad.FechaRegistro = dataReader.IsDBNull(22) ? DateTime.Now : dataReader.GetDateTime(22);
+                    entidad.UserNameEntidad = dataReader.IsDBNull(1) ? "NULL" : dataReader.GetString(1);
+                    entidad.PasswordEntidad = dataReader.IsDBNull(2) ? "NULL" : dataReader.GetString(2);
                 }
 
                 dataReader.Close();
@@ -245,6 +225,8 @@ namespace Capa_Datos
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
+
                 return null;
             }
         }

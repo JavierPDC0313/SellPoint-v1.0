@@ -137,6 +137,7 @@ namespace WindowsFormsApp1
             this.CkbNo.TabIndex = 43;
             this.CkbNo.Text = "No";
             this.CkbNo.UseVisualStyleBackColor = true;
+            this.CkbNo.CheckedChanged += new System.EventHandler(this.CkbNo_CheckedChanged);
             // 
             // CkbYes
             // 
@@ -147,6 +148,7 @@ namespace WindowsFormsApp1
             this.CkbYes.TabIndex = 42;
             this.CkbYes.Text = "Si";
             this.CkbYes.UseVisualStyleBackColor = true;
+            this.CkbYes.CheckedChanged += new System.EventHandler(this.CkbYes_CheckedChanged);
             // 
             // DtpFecha
             // 
@@ -163,6 +165,7 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 45;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,6 +197,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.lbDescripcion);
             this.Name = "FormAgregarGruposEntidades";
             this.Text = "AgregarGruposEntidades";
+            this.Load += new System.EventHandler(this.FormAgregarGruposEntidades_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,12 +11,26 @@ using System.Data;
 
 namespace Capa_Negocios
 {
-    class MantenimientoGruposEntidades
+    public class MantenimientoGruposEntidades
     {
         private RepositorioGruposEntidades repo;
         public MantenimientoGruposEntidades(SqlConnection conexion)
         {
             repo = new RepositorioGruposEntidades(conexion);
+        }
+
+        public GruposEntidades CrearObjeto(string descripcion, string comentario, string status, int eliminable, DateTime fecha)
+        {
+            GruposEntidades newItem = new GruposEntidades
+            {
+                Descripcion = descripcion,
+                Comentario = comentario,
+                Status = status,
+                NoEliminable = eliminable,
+                FechaRegistro = fecha
+            };
+
+            return newItem;
         }
 
         public bool Agregar(GruposEntidades item)

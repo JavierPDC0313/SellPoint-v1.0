@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Capa_Negocios
 {
-    class MantenimientoTiposEntidades
+    public class MantenimientoTiposEntidades
     {
         private RepositorioTiposEntidades repo;
 
