@@ -15,7 +15,7 @@ namespace Capa_Negocios
 
             if (item.TipoDocumento == "RNC")
             {
-                retorno = "B"+Convert.ToString(item.NumeroDocumento)
+                retorno = "B" + Convert.ToString(item.NumeroDocumento);
             }
             else if (item.TipoDocumento == "Cédula")
             {

@@ -19,7 +19,7 @@ namespace Capa_Negocios
             repo = new RepositorioEntidades(conexion);
         }
 
-        public Entidades CrearObjeto(string descripcion, string direccion, string localidad, string tipoEntidad, string numeroDoc, string telefono, int idGrupoEntidad, int idTipoEntidad, int LimiteCredito, string userName, string Pass, string rol, string comentario, string Status, int eliminable, DateTime fecha)
+        public Entidades CrearObjeto(string descripcion, string direccion, string localidad, string tipoEntidad, string numeroDoc, string telefono, int idGrupoEntidad, int idTipoEntidad, int LimiteCredito, string userName, string Pass, string rol, string Status, int eliminable, DateTime fecha)
         {
             Entidades entidad = new Entidades {
                 Descripcion = descripcion,
@@ -34,7 +34,7 @@ namespace Capa_Negocios
                 UserNameEntidad = userName,
                 PasswordEntidad = Pass,
                 RolUserEntidad = rol,
-                Comentario = comentario,
+                Comentario = "no comentarios",
                 Status = Status,
                 NoEliminable = eliminable,
                 FechaRegistro = fecha

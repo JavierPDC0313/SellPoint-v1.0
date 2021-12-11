@@ -62,7 +62,14 @@ namespace WindowsFormsApp1
         {
             if (Validations() == false)
             {
-                
+                if (_mantenimiento.Agregar(_mantenimiento.CrearObjeto(TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, TxtNumDocumento.Text, TxtTelefono.Text, 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtContraseña.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
+                {
+                    MessageBox.Show("Se ha agregado con éxito","notificacion");
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error inesperado. Intentalo de nuevo", "advertencia");
+                }
             }
         }
 
@@ -108,6 +115,11 @@ namespace WindowsFormsApp1
             }
 
             return isEmpty;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
