@@ -19,6 +19,30 @@ namespace Capa_Negocios
             repo = new RepositorioEntidades(conexion);
         }
 
+        public Entidades CrearObjeto(string descripcion, string direccion, string localidad, string tipoEntidad, string numeroDoc, string telefono, int idGrupoEntidad, int idTipoEntidad, int LimiteCredito, string userName, string Pass, string rol, string comentario, string Status, int eliminable, DateTime fecha)
+        {
+            Entidades entidad = new Entidades {
+                Descripcion = descripcion,
+                Direccion = direccion,
+                Localidad = localidad,
+                TipoEntidad = tipoEntidad,
+                NumeroDocumento = numeroDoc,
+                Teléfonos = telefono,
+                IdGrupoEntidad = idGrupoEntidad,
+                IdTipoEntidad = idTipoEntidad,
+                LimiteCredito = LimiteCredito,
+                UserNameEntidad = userName,
+                PasswordEntidad = Pass,
+                RolUserEntidad = rol,
+                Comentario = comentario,
+                Status = Status,
+                NoEliminable = eliminable,
+                FechaRegistro = fecha
+                };
+
+            return entidad;
+        }
+
         public bool Agregar(Entidades entidad)
         {
             return repo.Agregar(entidad);
