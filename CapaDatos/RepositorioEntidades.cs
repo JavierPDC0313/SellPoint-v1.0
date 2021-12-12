@@ -166,17 +166,9 @@ namespace Capa_Datos
                     entidad.TipoEntidad = dataReader.IsDBNull(4) ? "NULL" : dataReader.GetString(4);
                     entidad.TipoDocumento = dataReader.IsDBNull(5) ? "NULL" : dataReader.GetString(5);
                     entidad.NumeroDocumento = dataReader.IsDBNull(6) ? "NULL" : dataReader.GetString(6);
-                    entidad.Teléfonos = dataReader.IsDBNull(7) ? "NULL" : dataReader.GetString(7);
-                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);
-                    entidad.URLFacebook = dataReader.IsDBNull(9) ? "NULL" : dataReader.GetString(9);
-                    entidad.URLInstagram = dataReader.IsDBNull(10) ? "NULL" : dataReader.GetString(10);
-                    entidad.URLTwitter = dataReader.IsDBNull(11) ? "NULL" : dataReader.GetString(11);
-                    entidad.URLTikTok = dataReader.IsDBNull(12) ? "NULL" : dataReader.GetString(12);
-                    entidad.LimiteCredito = dataReader.IsDBNull(15) ? 0 : dataReader.GetInt32(15);
                     entidad.UserNameEntidad = dataReader.IsDBNull(16) ? "NULL" : dataReader.GetString(16);
                     entidad.PasswordEntidad = dataReader.IsDBNull(17) ? "NULL" : dataReader.GetString(17);
                     entidad.RolUserEntidad = dataReader.IsDBNull(18) ? "NULL" : dataReader.GetString(18);
-                    entidad.Comentario = dataReader.IsDBNull(19) ? "NULL" : dataReader.GetString(19);
                     entidad.Status = dataReader.IsDBNull(20) ? "NULL" : dataReader.GetString(20);
                     entidad.NoEliminable = dataReader.IsDBNull(21) ? 0 : dataReader.GetInt32(21);
                     entidad.FechaRegistro = dataReader.IsDBNull(22) ? DateTime.Now : dataReader.GetDateTime(22);
