@@ -84,5 +84,10 @@ namespace Capa_Negocios
         {
             return repo.EnlistarPorUser(userName);
         }
+
+        public SqlConnection conexion()
+        {
+            return repo.conexion();
+        } 
     }
 }

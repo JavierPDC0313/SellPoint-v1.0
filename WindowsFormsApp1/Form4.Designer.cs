@@ -52,11 +52,11 @@ namespace WindowsFormsApp1
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(124, 135);
+            this.label2.Location = new System.Drawing.Point(100, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(86, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Correo:";
+            this.label2.Text = "Contraseña:";
             // 
             // LblUser
             // 

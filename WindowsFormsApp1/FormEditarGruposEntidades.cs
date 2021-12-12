@@ -8,31 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Negocios;
-using System.Configuration ;
-using Capa_Datos.Modelos ;
-using System.Data.SqlClient ;
+using System.Configuration;
+using Capa_Datos.Modelos;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class FormEditarElimnar_TiposEntidades : Form
+    public partial class FormEditarGruposEntidades : Form
     {
-        MantenimientoTiposEntidades _mantenimiento;
+        MantenimientoGruposEntidades _mantenimiento;
 
-        TiposEntidades  entidad  =  new TiposEntidades();
+        GruposEntidades entidad = new GruposEntidades();
 
         private int id;
 
         private int Eliminable = 0;
-
-
-        public FormEditarElimnar_TiposEntidades()
+        public FormEditarGruposEntidades()
         {
             InitializeComponent();
+
             string connectionString = ConfigurationManager.ConnectionStrings["StringConnectionSQLServer"].ConnectionString;
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            _mantenimiento = new MantenimientoTiposEntidades(connection);
+            _mantenimiento = new MantenimientoGruposEntidades(connection);
+        }
+
+        private void FormEditarGruposEntidades_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            DgvGruposEntidades.Refresh();
+            DgvGruposEntidades.DataSource = _mantenimiento.Listar();
+            DgvGruposEntidades.Columns[0].Visible = false;
+            DgvGruposEntidades.ClearSelection();
         }
 
         private void CkbYes_CheckedChanged(object sender, EventArgs e)
@@ -47,11 +59,11 @@ namespace WindowsFormsApp1
             Eliminable = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (id >= 0)
             {
-                if (_mantenimiento.Editar(_mantenimiento.CrearObjeto(id, TxtDescripcion.Text,txtComentario.Text,CmbStatus.Text, Eliminable, DtpFecha.Value)))
+                if (_mantenimiento.Editar(_mantenimiento.CrearObjeto(id, TxtDescripcion.Text, TxtComentario.Text, CmbStatus.Text, Eliminable, DateTime.Now)))
                 {
                     MessageBox.Show("Editado con exito", "notificacion");
                     LoadData();
@@ -63,32 +75,19 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void FormEditarElimnar_TiposEntidades_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            DgvTiposEntidades.Refresh();
-            DgvTiposEntidades.DataSource = _mantenimiento.Listar();
-            DgvTiposEntidades.Columns[0].Visible = false;
-            DgvTiposEntidades.ClearSelection();
-        }
-
-        private void DgvTiposEntidades_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvGruposEntidades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (e.RowIndex >= 0)
                 {
-                    id = Convert.ToInt32(DgvTiposEntidades.Rows[e.RowIndex].Cells[0].Value.ToString());
-
+                    id = Convert.ToInt32(DgvGruposEntidades.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                     entidad = _mantenimiento.EnlistarPorId(id)
     ;
                     TxtDescripcion.Text = entidad.Descripcion;
-                    txtComentario.Text = entidad.Comentario;
+
+                    TxtComentario.Text = entidad.Comentario;
                     CmbStatus.Text = entidad.Status;
                     if (entidad.NoEliminable == 0)
                     {

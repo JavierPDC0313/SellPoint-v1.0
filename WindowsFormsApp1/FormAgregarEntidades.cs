@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
 
             _mantenimiento = new MantenimientoEntidades(connection);
 
+            cargar_datos(connection);
         }
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
@@ -125,17 +126,53 @@ namespace WindowsFormsApp1
 
         private void FormAgregarEntidades_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        public void cargar_datos(SqlConnection conexion)
         {
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IdGrupoEntidad,Descripcion as Nombre From GruposEntidades", conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conexion.Close();
 
+            DataRow fila = dt.NewRow();
+            fila["Nombre"] = "Selecciona un Grupo";
+            dt.Rows.InsertAt(fila,0);
+
+            CmbGrupo.ValueMember = "IdGrupoEntidad";
+            CmbGrupo.DisplayMember = "Nombre";
+            CmbGrupo.DataSource = dt;
         }
 
-        private void DtpFecha_ValueChanged(object sender, EventArgs e)
+        public void cargar_Tipo(string id_Grupo, SqlConnection conexion)
         {
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("Select IdTipoEntidad,Descripcion as Nombre From TiposEntidades where IdGrupoEntidad=@IdGrupoEntidad", conexion);
+            cmd.Parameters.AddWithValue("@IdGrupoEntidad", id_Grupo);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conexion.Close();
 
+            DataRow dr = dt.NewRow();
+            dr["Nombre"] = "Selecciona un tipo";
+            dt.Rows.InsertAt(dr, 0);
+
+            CmbTipo.ValueMember = "IdTipoEntidad";
+            CmbTipo.DisplayMember = "Nombre";
+            CmbTipo.DataSource = dt;
+        }
+
+        private void CmbGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbGrupo.SelectedValue.ToString() != null)
+            {
+                string id_Grupo = CmbGrupo.SelectedValue.ToString();
+                cargar_Tipo(id_Grupo, _mantenimiento.conexion());
+            }
         }
     }
 }

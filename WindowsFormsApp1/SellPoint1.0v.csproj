@@ -109,6 +109,12 @@
     <Compile Include="FormEditarElimnar_TiposEntidades.Designer.cs">
       <DependentUpon>FormEditarElimnar_TiposEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditarGruposEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarGruposEntidades.Designer.cs">
+      <DependentUpon>FormEditarGruposEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditar_EliminarEntidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarElimnar_TiposEntidades.resx">
       <DependentUpon>FormEditarElimnar_TiposEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarGruposEntidades.resx">
+      <DependentUpon>FormEditarGruposEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditar_EliminarEntidades.resx">
       <DependentUpon>FormEditar_EliminarEntidades.cs</DependentUpon>

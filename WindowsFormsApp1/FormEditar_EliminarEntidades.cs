@@ -97,7 +97,15 @@ namespace WindowsFormsApp1
                 
                 if (dialogo == DialogResult.Yes)
                 {
-                    _mantenimiento.Eliminar(id);
+                    if (_mantenimiento.Eliminar(id))
+                    {
+                        MessageBox.Show("Eliminado", "notificacion");
+                        DgvEntidades.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error inesperado. Intentalo de nuevo", "advertencia");
+                    }
                 }
             }
         }
@@ -109,6 +117,7 @@ namespace WindowsFormsApp1
                 if(_mantenimiento.Editar(_mantenimiento.CrearObjeto(id, TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, CmbTipoDoc.Text, TxtNumDoc.Text, "", 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtPass.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value))) 
                 {
                     MessageBox.Show("Editado con exito", "notificacion");
+                    DgvEntidades.Refresh();
                 }
                 else
                 {

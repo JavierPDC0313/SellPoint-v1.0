@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(566, 38);
+            this.label2.Location = new System.Drawing.Point(565, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 5;
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(624, 35);
+            this.TxtDireccion.Location = new System.Drawing.Point(623, 50);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(100, 20);
             this.TxtDireccion.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(565, 64);
+            this.label3.Location = new System.Drawing.Point(564, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 7;
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             // 
             // TxtLocalidad
             // 
-            this.TxtLocalidad.Location = new System.Drawing.Point(624, 61);
+            this.TxtLocalidad.Location = new System.Drawing.Point(623, 76);
             this.TxtLocalidad.Name = "TxtLocalidad";
             this.TxtLocalidad.Size = new System.Drawing.Size(100, 20);
             this.TxtLocalidad.TabIndex = 8;
@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(565, 87);
+            this.label4.Location = new System.Drawing.Point(575, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 9;
@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
             this.CmbEntidad.Items.AddRange(new object[] {
             "Física",
             "Jurídica"});
-            this.CmbEntidad.Location = new System.Drawing.Point(614, 84);
+            this.CmbEntidad.Location = new System.Drawing.Point(624, 102);
             this.CmbEntidad.Name = "CmbEntidad";
             this.CmbEntidad.Size = new System.Drawing.Size(121, 21);
             this.CmbEntidad.TabIndex = 10;
@@ -163,7 +163,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(565, 109);
+            this.label5.Location = new System.Drawing.Point(564, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 11;
@@ -172,14 +172,14 @@ namespace WindowsFormsApp1
             // CmbTipoDoc
             // 
             this.CmbTipoDoc.FormattingEnabled = true;
-            this.CmbTipoDoc.Location = new System.Drawing.Point(635, 106);
+            this.CmbTipoDoc.Location = new System.Drawing.Point(634, 140);
             this.CmbTipoDoc.Name = "CmbTipoDoc";
             this.CmbTipoDoc.Size = new System.Drawing.Size(38, 21);
             this.CmbTipoDoc.TabIndex = 12;
             // 
             // TxtNumDoc
             // 
-            this.TxtNumDoc.Location = new System.Drawing.Point(680, 106);
+            this.TxtNumDoc.Location = new System.Drawing.Point(679, 140);
             this.TxtNumDoc.Name = "TxtNumDoc";
             this.TxtNumDoc.Size = new System.Drawing.Size(100, 20);
             this.TxtNumDoc.TabIndex = 13;
@@ -187,7 +187,7 @@ namespace WindowsFormsApp1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(566, 133);
+            this.label6.Location = new System.Drawing.Point(565, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 14;
@@ -195,7 +195,7 @@ namespace WindowsFormsApp1
             // 
             // TxtUsuario
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(615, 130);
+            this.TxtUsuario.Location = new System.Drawing.Point(614, 180);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(100, 20);
             this.TxtUsuario.TabIndex = 15;
@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(566, 159);
+            this.label7.Location = new System.Drawing.Point(561, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 16;
@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
             // 
             // TxtPass
             // 
-            this.TxtPass.Location = new System.Drawing.Point(633, 156);
+            this.TxtPass.Location = new System.Drawing.Point(628, 216);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.Size = new System.Drawing.Size(100, 20);
             this.TxtPass.TabIndex = 17;
@@ -219,7 +219,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(569, 186);
+            this.label8.Location = new System.Drawing.Point(568, 252);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 18;
@@ -227,7 +227,7 @@ namespace WindowsFormsApp1
             // 
             // TxtLimite
             // 
-            this.TxtLimite.Location = new System.Drawing.Point(609, 183);
+            this.TxtLimite.Location = new System.Drawing.Point(608, 249);
             this.TxtLimite.Name = "TxtLimite";
             this.TxtLimite.Size = new System.Drawing.Size(100, 20);
             this.TxtLimite.TabIndex = 19;
@@ -235,7 +235,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(572, 214);
+            this.label9.Location = new System.Drawing.Point(571, 278);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 13);
             this.label9.TabIndex = 20;
@@ -248,7 +248,7 @@ namespace WindowsFormsApp1
             "Admin",
             "Supervisor",
             "User"});
-            this.CmbRol.Location = new System.Drawing.Point(603, 209);
+            this.CmbRol.Location = new System.Drawing.Point(602, 275);
             this.CmbRol.Name = "CmbRol";
             this.CmbRol.Size = new System.Drawing.Size(121, 21);
             this.CmbRol.TabIndex = 21;
@@ -256,7 +256,7 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(572, 243);
+            this.label10.Location = new System.Drawing.Point(571, 309);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 22;
@@ -268,7 +268,7 @@ namespace WindowsFormsApp1
             this.CmbStatus.Items.AddRange(new object[] {
             "Activa",
             "Inactiva"});
-            this.CmbStatus.Location = new System.Drawing.Point(609, 240);
+            this.CmbStatus.Location = new System.Drawing.Point(608, 306);
             this.CmbStatus.Name = "CmbStatus";
             this.CmbStatus.Size = new System.Drawing.Size(121, 21);
             this.CmbStatus.TabIndex = 23;
@@ -276,7 +276,7 @@ namespace WindowsFormsApp1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(566, 274);
+            this.label11.Location = new System.Drawing.Point(565, 340);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 13);
             this.label11.TabIndex = 24;
@@ -285,7 +285,7 @@ namespace WindowsFormsApp1
             // CkbYes
             // 
             this.CkbYes.AutoSize = true;
-            this.CkbYes.Location = new System.Drawing.Point(626, 273);
+            this.CkbYes.Location = new System.Drawing.Point(625, 339);
             this.CkbYes.Name = "CkbYes";
             this.CkbYes.Size = new System.Drawing.Size(35, 17);
             this.CkbYes.TabIndex = 41;
@@ -296,7 +296,7 @@ namespace WindowsFormsApp1
             // CkbNo
             // 
             this.CkbNo.AutoSize = true;
-            this.CkbNo.Location = new System.Drawing.Point(680, 273);
+            this.CkbNo.Location = new System.Drawing.Point(679, 339);
             this.CkbNo.Name = "CkbNo";
             this.CkbNo.Size = new System.Drawing.Size(40, 17);
             this.CkbNo.TabIndex = 42;
@@ -306,7 +306,7 @@ namespace WindowsFormsApp1
             // 
             // DtpFecha
             // 
-            this.DtpFecha.Location = new System.Drawing.Point(565, 296);
+            this.DtpFecha.Location = new System.Drawing.Point(564, 362);
             this.DtpFecha.Name = "DtpFecha";
             this.DtpFecha.Size = new System.Drawing.Size(200, 20);
             this.DtpFecha.TabIndex = 43;

@@ -40,11 +40,67 @@ namespace Capa_Datos
             return EjecutarConsulta(comando);
         }
 
+        public bool Editar(GruposEntidades entidad)
+        {
+            SqlCommand comando = new SqlCommand(@"Update GruposEntidades set Descripcion = @descripcion, Comentario = @comentario, Status = @status, NoEliminable = @noEliminable, FechaRegistro = @fechaRegistro where IdGrupoEntidad = @id", _conexion);
+
+            comando.Parameters.AddWithValue("@id", entidad.IdGrupoEntidad);
+            comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
+            comando.Parameters.AddWithValue("@comentario", entidad.Comentario);
+            comando.Parameters.AddWithValue("@status", entidad.Status);
+            comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
+            comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
+
+            _conexion.Close();
+
+
+            return EjecutarConsulta(comando);
+        }
+
         public DataTable Listar()
         {
             SqlDataAdapter comando = new SqlDataAdapter("select * from GruposEntidades", _conexion);
 
             return ObtenerDatos(comando);
+        }
+
+        public GruposEntidades EnlistarPorId(int id)
+        {
+            _conexion.Close();
+            try
+            {
+                _conexion.Open();
+
+                GruposEntidades entidad = new GruposEntidades();
+
+                SqlCommand sqlCommand = new SqlCommand("select * from GruposEntidades where IdGrupoEntidad = @id", _conexion);
+
+                sqlCommand.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    entidad.IdGrupoEntidad = dataReader.IsDBNull(0) ? 0 : dataReader.GetInt32(0);
+                    entidad.Descripcion = dataReader.IsDBNull(1) ? "NULL" : dataReader.GetString(1);
+                    entidad.Comentario = dataReader.IsDBNull(2) ? "NULL" : dataReader.GetString(2);
+                    entidad.Status = dataReader.IsDBNull(3) ? "NULL" : dataReader.GetString(3);
+                    entidad.NoEliminable = 1;
+                    entidad.FechaRegistro = DateTime.Now;
+                }
+
+                dataReader.Close();
+                dataReader.Dispose();
+
+                _conexion.Close();
+
+                return entidad;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         private bool EjecutarConsulta(SqlCommand command)

@@ -225,6 +225,11 @@ namespace Capa_Datos
             }
         }
 
+        public SqlConnection conexion()
+        {
+            return _conexion;
+        }
+
         private bool EjecutarConsulta(SqlCommand command)
         {
             try

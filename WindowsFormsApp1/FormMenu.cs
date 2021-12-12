@@ -68,7 +68,9 @@ namespace WindowsFormsApp1
 
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FormEditarGruposEntidades Frm = new FormEditarGruposEntidades();
+            Frm.MdiParent = this;
+            Frm.Show();
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
