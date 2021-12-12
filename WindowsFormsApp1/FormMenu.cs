@@ -12,10 +12,12 @@ namespace WindowsFormsApp1
 {
     public partial class FormMenu : Form
     {
-        public FormMenu()
+        private FormMenu()
         {
             InitializeComponent();
         }
+
+        public static FormMenu Instancia { get; set; } = new FormMenu();
 
         private void Form2_Load(object sender, EventArgs e)
         {
