@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
         {
             if (id >= 0)
             {
-                if(_mantenimiento.Editar(_mantenimiento.CrearObjeto(TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, CmbTipoDoc.Text, TxtNumDoc.Text, "", 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtPass.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value))) 
+                if(_mantenimiento.Editar(_mantenimiento.CrearObjeto(id, TxtDescripcion.Text, TxtDireccion.Text, TxtLocalidad.Text, CmbEntidad.Text, CmbTipoDoc.Text, TxtNumDoc.Text, "", 1, 1, Convert.ToInt32(TxtLimite.Text), TxtUsuario.Text, TxtPass.Text, CmbRol.Text, CmbStatus.Text, Eliminable, DtpFecha.Value))) 
                 {
                     MessageBox.Show("Editado con exito", "notificacion");
                 }

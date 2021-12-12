@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
         {
             if (Validations() == false)
             {
-                if (_mantenimiento1.Agregar(_mantenimiento1.CrearObjeto(TxtDescripcion.Text,txtComentario.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
+                if (_mantenimiento1.Agregar(_mantenimiento1.CrearObjeto(1, TxtDescripcion.Text,txtComentario.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
                 {
                     MessageBox.Show("Se ha agregado con éxito", "notificacion");
                 }

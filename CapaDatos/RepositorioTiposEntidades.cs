@@ -35,23 +35,18 @@ namespace Capa_Datos
         }
         public bool Editar(TiposEntidades entidad)
         {
-            SqlCommand comando = new SqlCommand(@"Update Entidades set Descripcion = @descripcion, idGrupoEntidad = @idGrupoEntidad, comentario = @comentario, status = @status, NoEliminable = @noEliminable, FechaIngreso = @fechaRegistro)", _conexion);
+            SqlCommand comando = new SqlCommand(@"Update TiposEntidades set Descripcion = @descripcion, IdGrupoEntidad = @idGrupoEntidad, Comentario = @comentario, Status = @status, NoEliminable = @noEliminable, FechaRegistro = @fechaRegistro where IdTipoEntidad = @id", _conexion);
 
+            comando.Parameters.AddWithValue("@id", entidad.IdTipoEntidad);
             comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
             comando.Parameters.AddWithValue("@idGrupoEntidad", entidad.IdGrupoEntidad);
             comando.Parameters.AddWithValue("@comentario", entidad.Comentario);
             comando.Parameters.AddWithValue("@status", entidad.Status);
             comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
             comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
-            
 
-            return EjecutarConsulta(comando);
-        }
-        public bool Eliminar(int id)
-        {
-            SqlCommand comando = new SqlCommand("Delete TiposEntidades where IdTipoEntidad = @id", _conexion);
+            _conexion.Close();
 
-            comando.Parameters.AddWithValue("@id", id);
 
             return EjecutarConsulta(comando);
         }
@@ -61,6 +56,46 @@ namespace Capa_Datos
             SqlDataAdapter comando = new SqlDataAdapter("select * from TiposEntidades", _conexion);
 
             return ObtenerDatos(comando);
+        }
+
+        public TiposEntidades EnlistarPorId(int id)
+        {
+            _conexion.Close();
+            try
+            {
+                _conexion.Open();
+
+                TiposEntidades entidad = new TiposEntidades();
+
+                SqlCommand sqlCommand = new SqlCommand("select * from TiposEntidades where IdTipoEntidad = @id", _conexion);
+
+                sqlCommand.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    entidad.IdTipoEntidad = dataReader.IsDBNull(0) ? 0 : dataReader.GetInt32(0);
+                    entidad.Descripcion = dataReader.IsDBNull(1) ? "NULL" : dataReader.GetString(1);
+                    entidad.IdGrupoEntidad = dataReader.IsDBNull(2) ? 0 : dataReader.GetInt32(2);
+                    entidad.Comentario = dataReader.IsDBNull(3) ? "NULL" : dataReader.GetString(3);
+                    entidad.Status = dataReader.IsDBNull(4) ? "NULL" : dataReader.GetString(4);
+                    entidad.NoEliminable = 1;
+                    entidad.FechaRegistro = DateTime.Now;
+                }
+
+                dataReader.Close();
+                dataReader.Dispose();
+
+                _conexion.Close();
+
+                return entidad;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         private bool EjecutarConsulta(SqlCommand command)
@@ -75,6 +110,7 @@ namespace Capa_Datos
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 return false;
             }
         }

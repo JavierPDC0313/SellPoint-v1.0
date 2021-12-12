@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         {
             this.DgvTiposEntidades = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.CkbNo = new System.Windows.Forms.CheckBox();
             this.CkbYes = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,11 +55,11 @@ namespace WindowsFormsApp1
             this.DgvTiposEntidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvTiposEntidades.Size = new System.Drawing.Size(422, 275);
             this.DgvTiposEntidades.TabIndex = 0;
-            this.DgvTiposEntidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTiposEntidades_CellContentClick);
+            this.DgvTiposEntidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTiposEntidades_CellClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 338);
+            this.button1.Location = new System.Drawing.Point(510, 270);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 28);
@@ -68,17 +67,6 @@ namespace WindowsFormsApp1
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(313, 338);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CkbNo
             // 
@@ -189,7 +177,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.lbDescripcion);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DgvTiposEntidades);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -206,7 +193,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.DataGridView DgvTiposEntidades;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox CkbNo;
         private System.Windows.Forms.CheckBox CkbYes;
         private System.Windows.Forms.Label label10;

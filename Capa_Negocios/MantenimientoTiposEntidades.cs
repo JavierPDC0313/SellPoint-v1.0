@@ -18,10 +18,11 @@ namespace Capa_Negocios
         {
             repo = new RepositorioTiposEntidades(conexion);
         }
-        public TiposEntidades CrearObjeto(string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
+        public TiposEntidades CrearObjeto(int id, string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
         {
             TiposEntidades entidad = new TiposEntidades
             {
+                IdTipoEntidad = id,
                 Descripcion = descripcion,
                 Comentario = "no comentarios",
                 Status = Status,
@@ -37,11 +38,6 @@ namespace Capa_Negocios
             return repo.Agregar(item);
         }
 
-        public bool Eliminar(int id)
-        {
-            return repo.Eliminar(id);
-        }
-
         public DataTable Listar()
         {
             return repo.Listar();
@@ -49,6 +45,11 @@ namespace Capa_Negocios
         public bool Editar(TiposEntidades entidad)
         {
             return repo.Editar(entidad);
+        }
+
+        public TiposEntidades EnlistarPorId(int id)
+        {
+            return repo.EnlistarPorId(id);
         }
 
     }

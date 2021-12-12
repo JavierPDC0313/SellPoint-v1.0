@@ -66,9 +66,10 @@ namespace Capa_Datos
             SqlCommand comando = new SqlCommand(@"Update Entidades set Descripcion = @descripcion, Direccion = @direccion, Localidad = @localidad, TipoEntidad = @tipoEntidad,
             TipoDocumento = @tipoDocumento, NumeroDocumento = @numeroDocumento, Teléfonos = @telefono, URLPaginaWeb = @urlPaginaWeb, URLFacebook = @urlFacebook,
             URLInstagram = @urlInstagram, URLTwitter = @urlTwitter, URLTikTok = @urlTikTok, IdGrupoEntidad = @idGrupoEntidad,
-            IdTipoEntidad = @idTipoEntidad, LimiteCredito = @limiteCredito, UserNameEntidad = @userNameEntidad, PasswordEntidad = @passwordEntidad, RolUserEntidad = @rolUserEntidad, 
-            Comentario = @comentario, Status = @status, NoEliminable = @noEliminable, FechaIngreso = @fechaRegistro)", _conexion);
+            IdTipoEntidad = @idTipoEntidad, LimiteCredito = @limiteCredito, UserNameEntidad = @userNameEntidad, PassworEntidad = @passwordEntidad, RolUserEntidad = @rolUserEntidad, 
+            Comentario = @comentario, Status = @status, NoEliminable = @noEliminable, FechaRegistro = @fechaRegistro where IdEntidad = @id", _conexion);
 
+            comando.Parameters.AddWithValue("@id", entidad.IdEntidad);
             comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
             comando.Parameters.AddWithValue("@direccion", entidad.Direccion);
             comando.Parameters.AddWithValue("@localidad", entidad.Localidad);
@@ -170,7 +171,7 @@ namespace Capa_Datos
                     entidad.PasswordEntidad = dataReader.IsDBNull(17) ? "NULL" : dataReader.GetString(17);
                     entidad.RolUserEntidad = dataReader.IsDBNull(18) ? "NULL" : dataReader.GetString(18);
                     entidad.Status = dataReader.IsDBNull(20) ? "NULL" : dataReader.GetString(20);
-                    entidad.NoEliminable = dataReader.IsDBNull(21) ? 0 : dataReader.GetInt32(21);
+                    entidad.NoEliminable = 0;
                     entidad.FechaRegistro = dataReader.IsDBNull(22) ? DateTime.Now : dataReader.GetDateTime(22);
                 }
 
