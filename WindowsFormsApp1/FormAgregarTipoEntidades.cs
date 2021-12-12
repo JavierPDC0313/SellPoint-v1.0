@@ -27,6 +27,8 @@ namespace WindowsFormsApp1
             SqlConnection connection = new SqlConnection(connectionString);
 
             _mantenimiento1 = new MantenimientoTiposEntidades(connection);
+
+            cargar_datos(connection);
         }
         private bool Validations()
         {
@@ -48,9 +50,10 @@ namespace WindowsFormsApp1
         {
             if (Validations() == false)
             {
-                if (_mantenimiento1.Agregar(_mantenimiento1.CrearObjeto(1, TxtDescripcion.Text,txtComentario.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
+                if (_mantenimiento1.Agregar(_mantenimiento1.CrearObjeto(1, TxtDescripcion.Text, (int)CmbGrupo.SelectedValue,txtComentario.Text, CmbStatus.Text, Eliminable, DtpFecha.Value)))
                 {
                     MessageBox.Show("Se ha agregado con éxito", "notificacion");
+                    this.Close();
                 }
                 else
                 {
@@ -67,8 +70,26 @@ namespace WindowsFormsApp1
 
         private void CkbNo_CheckedChanged(object sender, EventArgs e)
         {
-            CkbNo.Checked = false;
+            CkbYes.Checked = false;
             Eliminable = 0;
+        }
+
+        public void cargar_datos(SqlConnection conexion)
+        {
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SELECT IdGrupoEntidad,Descripcion as Nombre From GruposEntidades", conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conexion.Close();
+
+            DataRow fila = dt.NewRow();
+            fila["Nombre"] = "Selecciona un Grupo";
+            dt.Rows.InsertAt(fila, 0);
+
+            CmbGrupo.ValueMember = "IdGrupoEntidad";
+            CmbGrupo.DisplayMember = "Nombre";
+            CmbGrupo.DataSource = dt;
         }
     }
 }

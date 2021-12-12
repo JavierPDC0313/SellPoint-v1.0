@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void tbUser_Enter(object sender, EventArgs e)
@@ -125,6 +125,8 @@ namespace WindowsFormsApp1
                         Pass = tbContraseña.Text;
                         this.Hide();
                         FormMenu.Instancia.Show();
+                        SplashForm Splash = new SplashForm();
+                        Splash.Show();
                     }
                     else
                     {

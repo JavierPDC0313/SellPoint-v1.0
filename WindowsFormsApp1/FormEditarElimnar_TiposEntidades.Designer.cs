@@ -41,6 +41,8 @@ namespace WindowsFormsApp1
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.lbDescripcion = new System.Windows.Forms.Label();
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CmbGrupo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTiposEntidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@ namespace WindowsFormsApp1
             // CkbNo
             // 
             this.CkbNo.AutoSize = true;
-            this.CkbNo.Location = new System.Drawing.Point(605, 156);
+            this.CkbNo.Location = new System.Drawing.Point(605, 181);
             this.CkbNo.Name = "CkbNo";
             this.CkbNo.Size = new System.Drawing.Size(40, 17);
             this.CkbNo.TabIndex = 53;
@@ -82,7 +84,7 @@ namespace WindowsFormsApp1
             // CkbYes
             // 
             this.CkbYes.AutoSize = true;
-            this.CkbYes.Location = new System.Drawing.Point(542, 156);
+            this.CkbYes.Location = new System.Drawing.Point(542, 181);
             this.CkbYes.Name = "CkbYes";
             this.CkbYes.Size = new System.Drawing.Size(35, 17);
             this.CkbYes.TabIndex = 52;
@@ -94,7 +96,7 @@ namespace WindowsFormsApp1
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(454, 156);
+            this.label10.Location = new System.Drawing.Point(454, 181);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 14);
             this.label10.TabIndex = 51;
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
             this.CmbStatus.Items.AddRange(new object[] {
             "Activa",
             "Inactiva"});
-            this.CmbStatus.Location = new System.Drawing.Point(542, 121);
+            this.CmbStatus.Location = new System.Drawing.Point(542, 99);
             this.CmbStatus.Name = "CmbStatus";
             this.CmbStatus.Size = new System.Drawing.Size(100, 21);
             this.CmbStatus.TabIndex = 50;
@@ -115,7 +117,7 @@ namespace WindowsFormsApp1
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(454, 121);
+            this.label9.Location = new System.Drawing.Point(454, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 14);
             this.label9.TabIndex = 49;
@@ -123,7 +125,7 @@ namespace WindowsFormsApp1
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(542, 88);
+            this.txtComentario.Location = new System.Drawing.Point(542, 66);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(100, 20);
             this.txtComentario.TabIndex = 48;
@@ -132,7 +134,7 @@ namespace WindowsFormsApp1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(454, 90);
+            this.label1.Location = new System.Drawing.Point(454, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 14);
             this.label1.TabIndex = 47;
@@ -140,7 +142,7 @@ namespace WindowsFormsApp1
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(542, 58);
+            this.TxtDescripcion.Location = new System.Drawing.Point(542, 36);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.TxtDescripcion.TabIndex = 46;
@@ -149,7 +151,7 @@ namespace WindowsFormsApp1
             // 
             this.lbDescripcion.AutoSize = true;
             this.lbDescripcion.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescripcion.Location = new System.Drawing.Point(454, 61);
+            this.lbDescripcion.Location = new System.Drawing.Point(454, 39);
             this.lbDescripcion.Name = "lbDescripcion";
             this.lbDescripcion.Size = new System.Drawing.Size(87, 14);
             this.lbDescripcion.TabIndex = 45;
@@ -162,11 +164,31 @@ namespace WindowsFormsApp1
             this.DtpFecha.Size = new System.Drawing.Size(200, 20);
             this.DtpFecha.TabIndex = 55;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(454, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 14);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Grupo:";
+            // 
+            // CmbGrupo
+            // 
+            this.CmbGrupo.FormattingEnabled = true;
+            this.CmbGrupo.Location = new System.Drawing.Point(535, 138);
+            this.CmbGrupo.Name = "CmbGrupo";
+            this.CmbGrupo.Size = new System.Drawing.Size(121, 21);
+            this.CmbGrupo.TabIndex = 57;
+            // 
             // FormEditarElimnar_TiposEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 391);
+            this.Controls.Add(this.CmbGrupo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DtpFecha);
             this.Controls.Add(this.CkbNo);
             this.Controls.Add(this.CkbYes);
@@ -203,5 +225,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label lbDescripcion;
         private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox CmbGrupo;
     }
 }

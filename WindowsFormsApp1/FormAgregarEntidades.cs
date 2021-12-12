@@ -132,25 +132,25 @@ namespace WindowsFormsApp1
         public void cargar_datos(SqlConnection conexion)
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("SELECT IdGrupoEntidad,Descripcion as Nombre From GruposEntidades", conexion);
+            SqlCommand cmd = new SqlCommand("SELECT IdGrupoEntidad,Descripcion From GruposEntidades", conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             conexion.Close();
 
             DataRow fila = dt.NewRow();
-            fila["Nombre"] = "Selecciona un Grupo";
+            fila["Descripcion"] = "Selecciona un Grupo";
             dt.Rows.InsertAt(fila,0);
 
             CmbGrupo.ValueMember = "IdGrupoEntidad";
-            CmbGrupo.DisplayMember = "Nombre";
+            CmbGrupo.DisplayMember = "Descripcion";
             CmbGrupo.DataSource = dt;
         }
 
         public void cargar_Tipo(string id_Grupo, SqlConnection conexion)
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("Select IdTipoEntidad,Descripcion as Nombre From TiposEntidades where IdGrupoEntidad=@IdGrupoEntidad", conexion);
+            SqlCommand cmd = new SqlCommand("Select IdTipoEntidad,Descripcion From TiposEntidades where IdGrupoEntidad = @IdGrupoEntidad", conexion);
             cmd.Parameters.AddWithValue("@IdGrupoEntidad", id_Grupo);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -158,11 +158,11 @@ namespace WindowsFormsApp1
             conexion.Close();
 
             DataRow dr = dt.NewRow();
-            dr["Nombre"] = "Selecciona un tipo";
+            dr["Descripcion"] = "Selecciona un tipo";
             dt.Rows.InsertAt(dr, 0);
 
             CmbTipo.ValueMember = "IdTipoEntidad";
-            CmbTipo.DisplayMember = "Nombre";
+            CmbTipo.DisplayMember = "Descripcion";
             CmbTipo.DataSource = dt;
         }
 
