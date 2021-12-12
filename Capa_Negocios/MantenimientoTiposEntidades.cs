@@ -18,9 +18,9 @@ namespace Capa_Negocios
         {
             repo = new RepositorioTiposEntidades(conexion);
         }
-        public Entidades CrearObjeto(string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
+        public TiposEntidades CrearObjeto(string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
         {
-            Entidades entidad = new Entidades
+            TiposEntidades entidad = new TiposEntidades
             {
                 Descripcion = descripcion,
                 Comentario = "no comentarios",
@@ -46,5 +46,10 @@ namespace Capa_Negocios
         {
             return repo.Listar();
         }
+        public bool Editar(TiposEntidades entidad)
+        {
+            return repo.Editar(entidad);
+        }
+
     }
 }
