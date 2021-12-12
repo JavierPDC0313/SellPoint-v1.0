@@ -25,9 +25,38 @@ namespace WindowsFormsApp1
 
         private void atsmInventario_Click(object sender, EventArgs e)
         {
-            FormAgregarEntidades formAgregar = new FormAgregarEntidades();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstudiantes Usuarios = new FormEstudiantes();
+            Usuarios.Show();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuario usuario = new FormUsuario();
+            usuario.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin salir = new FormLogin();
+            salir.Show();
+         //   this.Close();
+
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregar formAgregar = new FormAgregar();
             formAgregar.MdiParent = this;
             formAgregar.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
