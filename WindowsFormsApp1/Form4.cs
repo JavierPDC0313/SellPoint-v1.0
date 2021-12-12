@@ -19,7 +19,13 @@ namespace WindowsFormsApp1
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormMenu.Instancia.Show();
+            this.Close();
+        }
+
+        private void FormUsuario_Load(object sender, EventArgs e)
+        {
+            LblUser.Text = FormLogin.Instancia.userName;
+            LblPass.Text = FormLogin.Instancia.Pass;
         }
     }
 }

@@ -17,6 +17,10 @@ namespace WindowsFormsApp1
     public partial class FormLogin : Form
     {
         MantenimientoEntidades _mantenimiento;
+
+        public string userName { get; set; }
+
+        public string Pass { get; set; }
         private FormLogin()
         {
             InitializeComponent();
@@ -117,6 +121,8 @@ namespace WindowsFormsApp1
                     if (entidad.PasswordEntidad == tbContraseña.Text)
                     {
                         MessageBox.Show("Bienvenido");
+                        userName = tbUser.Text;
+                        Pass = tbContraseña.Text;
                         this.Hide();
                         FormMenu.Instancia.Show();
                     }

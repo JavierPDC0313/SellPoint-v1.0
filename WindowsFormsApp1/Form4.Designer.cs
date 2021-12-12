@@ -31,8 +31,8 @@ namespace WindowsFormsApp1
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LblUser = new System.Windows.Forms.Label();
+            this.LblPass = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -58,25 +58,25 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 1;
             this.label2.Text = "Correo:";
             // 
-            // label3
+            // LblUser
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(185, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.LblUser.AutoSize = true;
+            this.LblUser.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.LblUser.Location = new System.Drawing.Point(185, 94);
+            this.LblUser.Name = "LblUser";
+            this.LblUser.Size = new System.Drawing.Size(43, 13);
+            this.LblUser.TabIndex = 2;
+            this.LblUser.Text = "LblUser";
             // 
-            // label4
+            // LblPass
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(185, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.LblPass.AutoSize = true;
+            this.LblPass.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.LblPass.Location = new System.Drawing.Point(185, 136);
+            this.LblPass.Name = "LblPass";
+            this.LblPass.Size = new System.Drawing.Size(35, 13);
+            this.LblPass.TabIndex = 3;
+            this.LblPass.Text = "label4";
             // 
             // btnVolver
             // 
@@ -97,8 +97,8 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(343, 310);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LblPass);
+            this.Controls.Add(this.LblUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -106,6 +106,7 @@ namespace WindowsFormsApp1
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
+            this.Load += new System.EventHandler(this.FormUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,8 +116,8 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LblUser;
+        private System.Windows.Forms.Label LblPass;
         private System.Windows.Forms.Button btnVolver;
     }
 }
