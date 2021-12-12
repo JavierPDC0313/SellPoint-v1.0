@@ -41,8 +41,9 @@ namespace WindowsFormsApp1
 
         private void LoadData()
         {
-            DgvEntidades.DataSource = _mantenimiento.Listar();
             DgvEntidades.Refresh();
+            DgvEntidades.DataSource = _mantenimiento.Listar();
+            DgvEntidades.Columns[0].Visible = false;
             DgvEntidades.ClearSelection();
         }
 

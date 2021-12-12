@@ -65,6 +65,7 @@ namespace WindowsFormsApp1
             this.DgvEntidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvEntidades.Location = new System.Drawing.Point(12, 12);
             this.DgvEntidades.Name = "DgvEntidades";
+            this.DgvEntidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvEntidades.Size = new System.Drawing.Size(547, 356);
             this.DgvEntidades.TabIndex = 0;
             this.DgvEntidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEntidades_CellClick);

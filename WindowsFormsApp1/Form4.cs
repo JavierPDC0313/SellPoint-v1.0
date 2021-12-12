@@ -19,8 +19,7 @@ namespace WindowsFormsApp1
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu();
-            menu.Show();
+            FormMenu.Instancia.Show();
         }
     }
 }

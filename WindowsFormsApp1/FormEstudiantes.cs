@@ -29,8 +29,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu();
-            menu.Show();
+            FormMenu.Instancia.Show();
         }
     }
 }

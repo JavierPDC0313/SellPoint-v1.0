@@ -35,12 +35,6 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormMenu menu = new FormMenu();
-            menu.Show();
-        }
-
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
@@ -124,7 +118,7 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("Bienvenido");
                         this.Hide();
-
+                        FormMenu.Instancia.Show();
                     }
                     else
                     {

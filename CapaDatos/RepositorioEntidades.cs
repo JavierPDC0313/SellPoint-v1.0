@@ -47,6 +47,8 @@ namespace Capa_Datos
             comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
             comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
 
+            _conexion.Close();
+
             return EjecutarConsulta(comando);
         }
 
@@ -95,7 +97,7 @@ namespace Capa_Datos
 
         public DataTable Listar()
         {
-            SqlDataAdapter lista = new SqlDataAdapter("select * From Vw_Entidades", _conexion);
+            SqlDataAdapter lista = new SqlDataAdapter(@"select IdEntidad, Descripcion as Nombre, UserNameEntidad as NombreUsuario, Status from Entidades", _conexion);
 
             return ObtenerDatos(lista);
         }
@@ -165,13 +167,11 @@ namespace Capa_Datos
                     entidad.TipoDocumento = dataReader.IsDBNull(5) ? "NULL" : dataReader.GetString(5);
                     entidad.NumeroDocumento = dataReader.IsDBNull(6) ? "NULL" : dataReader.GetString(6);
                     entidad.Teléfonos = dataReader.IsDBNull(7) ? "NULL" : dataReader.GetString(7);
-                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);
+                    entidad.URLPaginaWeb = dataReader.IsDBNull(8) ? "NULL" : dataReader.GetString(8);
                     entidad.URLFacebook = dataReader.IsDBNull(9) ? "NULL" : dataReader.GetString(9);
                     entidad.URLInstagram = dataReader.IsDBNull(10) ? "NULL" : dataReader.GetString(10);
                     entidad.URLTwitter = dataReader.IsDBNull(11) ? "NULL" : dataReader.GetString(11);
                     entidad.URLTikTok = dataReader.IsDBNull(12) ? "NULL" : dataReader.GetString(12);
-                    entidad.IdGrupoEntidad = dataReader.IsDBNull(13) ? 0 : dataReader.GetInt32(13);
-                    entidad.IdTipoEntidad = dataReader.IsDBNull(14) ? 0 : dataReader.GetInt32(14);
                     entidad.LimiteCredito = dataReader.IsDBNull(15) ? 0 : dataReader.GetInt32(15);
                     entidad.UserNameEntidad = dataReader.IsDBNull(16) ? "NULL" : dataReader.GetString(16);
                     entidad.PasswordEntidad = dataReader.IsDBNull(17) ? "NULL" : dataReader.GetString(17);
@@ -191,6 +191,7 @@ namespace Capa_Datos
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
@@ -243,6 +244,8 @@ namespace Capa_Datos
             }
             catch (Exception e)
             {
+                _conexion.Close();
+                Console.Write(e.Message); 
                 return false;
             }
         }
@@ -261,6 +264,8 @@ namespace Capa_Datos
             }
             catch (Exception e)
             {
+                _conexion.Close();
+                Console.Write(e.Message);
                 return null;
             }
         }

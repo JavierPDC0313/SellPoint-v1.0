@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -89,6 +97,18 @@
     <Compile Include="FormAgregarEntidades.designer.cs">
       <DependentUpon>FormAgregarEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAgregarTipoEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarTipoEntidades.Designer.cs">
+      <DependentUpon>FormAgregarTipoEntidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarElimnar_TiposEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarElimnar_TiposEntidades.Designer.cs">
+      <DependentUpon>FormEditarElimnar_TiposEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditar_EliminarEntidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarGruposEntidades.resx">
       <DependentUpon>FormAgregarGruposEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarTipoEntidades.resx">
+      <DependentUpon>FormAgregarTipoEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarElimnar_TiposEntidades.resx">
+      <DependentUpon>FormEditarElimnar_TiposEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditar_EliminarEntidades.resx">
       <DependentUpon>FormEditar_EliminarEntidades.cs</DependentUpon>

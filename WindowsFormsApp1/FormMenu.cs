@@ -32,33 +32,64 @@ namespace WindowsFormsApp1
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormEstudiantes Usuarios = new FormEstudiantes();
-            Usuarios.Show();
+            Usuarios.ShowDialog();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormUsuario usuario = new FormUsuario();
-            usuario.Show();
+            usuario.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogin salir = new FormLogin();
-            salir.Show();
-         //   this.Close();
-
-        }
-
-        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAgregar formAgregar = new FormAgregar();
-            formAgregar.MdiParent = this;
-            formAgregar.Show();
+            FormLogin.Instancia.Show();
+            this.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void editarEliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEditar_EliminarEntidades Form = new FormEditar_EliminarEntidades();
+            Form.MdiParent = this;
+            Form.Show();
+        }
+
+        private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormAgregarGruposEntidades Frm = new FormAgregarGruposEntidades();
+            Frm.MdiParent = this;
+            Frm.Show();
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormAgregarTipoEntidades Frm = new FormAgregarTipoEntidades();
+            Frm.MdiParent = this;
+            Frm.Show();
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormAgregarEntidades Frm = new FormAgregarEntidades();
+            Frm.MdiParent = this;
+            Frm.Show();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEditarElimnar_TiposEntidades Frm = new FormEditarElimnar_TiposEntidades();
+            Frm.MdiParent = this;
+            Frm.Show();
         }
     }
 }
