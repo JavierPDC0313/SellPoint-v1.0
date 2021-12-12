@@ -18,6 +18,19 @@ namespace Capa_Negocios
         {
             repo = new RepositorioTiposEntidades(conexion);
         }
+        public Entidades CrearObjeto(string descripcion, string Comentario,  string Status, int eliminable, DateTime fecha)
+        {
+            Entidades entidad = new Entidades
+            {
+                Descripcion = descripcion,
+                Comentario = "no comentarios",
+                Status = Status,
+                NoEliminable = eliminable,
+                FechaRegistro = fecha
+            };
+
+            return entidad;
+        }
 
         public bool Agregar(TiposEntidades item)
         {
