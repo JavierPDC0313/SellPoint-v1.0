@@ -33,7 +33,20 @@ namespace Capa_Datos
 
             return EjecutarConsulta(comando);
         }
+        public bool Editar(TiposEntidades entidad)
+        {
+            SqlCommand comando = new SqlCommand(@"Update Entidades set Descripcion = @descripcion, idGrupoEntidad = @idGrupoEntidad, comentario = @comentario, status = @status, NoEliminable = @noEliminable, FechaIngreso = @fechaRegistro)", _conexion);
 
+            comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
+            comando.Parameters.AddWithValue("@idGrupoEntidad", entidad.IdGrupoEntidad);
+            comando.Parameters.AddWithValue("@comentario", entidad.Comentario);
+            comando.Parameters.AddWithValue("@status", entidad.Status);
+            comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
+            comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
+            
+
+            return EjecutarConsulta(comando);
+        }
         public bool Eliminar(int id)
         {
             SqlCommand comando = new SqlCommand("Delete TiposEntidades where IdTipoEntidad = @id", _conexion);
